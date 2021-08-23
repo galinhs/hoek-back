@@ -79,7 +79,7 @@ export const editExhibition = async (req, res) => {
       current: req.body.current
     }
     // 如果有 req.filepath 才放 image 進去
-    if (req.files) data.image = req.files
+    if (req.files.length > 0) data.image = req.files
     const result = await exhibitions.findByIdAndUpdate(req.params.id, data, { new: true })
     res.status(200).send({ success: true, message: '', result })
   } catch (error) {
