@@ -25,7 +25,7 @@ app.use(
         callback(null, true)
       } else {
         // 非開發環境下，判斷請求從哪裡來，只允許來自 github 的請求
-        if (origin !== undefined && origin.includes('github')) {
+        if (origin === undefined || origin.includes('github')) {
           callback(null, true)
         } else {
           callback(new Error('Not allowed'), false)
