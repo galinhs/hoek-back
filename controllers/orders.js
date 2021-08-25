@@ -18,7 +18,12 @@ export const checkout = async (req, res) => {
         user: req.user._id,
         products: req.user.cart,
         date: new Date(),
-        deliver: req.body.deliver
+        receiver: req.body.receiver,
+        phone: req.body.phone,
+        address: req.body.address,
+        delivery: req.body.delivery,
+        payment: req.body.payment,
+        totalPrice: req.body.totalPrice
       })
       req.user.cart = []
       req.user.save({ validateBeforeSave: false })

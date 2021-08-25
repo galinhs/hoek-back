@@ -24,25 +24,23 @@ const orderSchema = new Schema(
       type: Date,
       required: [true, '缺少訂單日期']
     },
-    deliver: {
-      receiver: {
-        type: String
-      },
-      phone: {
-        type: Number
-      },
-      address: {
-        type: String
-      },
-      delivery: {
-        type: String
-      },
-      payment: {
-        type: String
-      },
-      totalPrice: {
-        type: Number
-      }
+    receiver: {
+      type: String
+    },
+    phone: {
+      type: Number
+    },
+    address: {
+      type: String
+    },
+    delivery: {
+      type: String
+    },
+    payment: {
+      type: String
+    },
+    totalPrice: {
+      type: Number
     }
   }, { versionKey: false })
 
